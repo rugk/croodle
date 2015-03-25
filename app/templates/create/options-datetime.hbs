@@ -2,7 +2,7 @@
   {{#form-for controller}}
     {{#input enoughTimes}}
       {{label-field enoughTimes
-          textTranslation="create.options-datetime.datetimes.label"
+          textTranslation="create.optionsDatetime.datetimes.label"
       }}
       <table class="table">
         <tbody>
@@ -32,9 +32,9 @@
     {{/input}}
   {{/form-for}}
 
-  <button {{action "moreTimes"}} class="btn btn-default button-more-times">{{t "create.options-datetime.more-inputs"}}</button>
+  <button {{action "moreTimes"}} class="btn btn-default button-more-times">{{t "create.optionsDatetime.moreInputs"}}</button>
 
-  <button {{action "copyFirstLine"}} class="btn btn-default button-copy-first-line">{{t "create.options-datetime.copy-first-line"}}</button>
+  <button {{action "copyFirstLine"}} class="btn btn-default button-copy-first-line">{{t "create.optionsDatetime.copyFirstLine"}}</button>
 
   <button {{action "submit"}} class="btn btn-default btn-primary button-next"> {{t 'create.next'}} </button>
 </div>

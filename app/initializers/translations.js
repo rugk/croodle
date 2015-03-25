@@ -6,7 +6,6 @@ import translations from "croodle/lang/translations";
 export default {
     name: 'i18n',
     initialize: function(container, application) {
-        // detect browser language
         var language = '';
         
         // have a look if it's already stored in a cookie
@@ -28,17 +27,8 @@ export default {
             language = "en";
         }
       
-        Ember.FEATURES.I18N_TRANSLATE_HELPER_SPAN = false;
-        Ember.ENV.I18N_COMPILE_WITHOUT_HANDLEBARS = true;
-        Ember.I18n.translations = translations[language];
-        Ember.I18n.locale = language;
-        
-        // inject into controller
-        var languageStorage = Ember.Object.extend({
-          selected: language
-        });
-        container.register('language:current', languageStorage, {singleton: true});
-        application.inject('controller', 'language', 'language:current');
+	// set language
+	Ember.set(application, 'locale', language);
         
         // set moment locale
         moment.locale( language );
