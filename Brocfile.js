@@ -1,13 +1,10 @@
 /* global require, module */
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var pickFiles = require('broccoli-static-compiler');
+var trees = [];
 
 var app = new EmberApp({
-  // add version information to build as meta tag
-  buildInfoOptions: {
-    metaTemplate: 'version={DESC}'
-  },
-  
   // do not fingerprint webshim
   fingerprint: {
     exclude: ['assets/shims']
@@ -40,16 +37,24 @@ app.import({
   development: 'bower_components/bootstrap/dist/css/bootstrap.css',
   production: 'bower_components/bootstrap/dist/css/bootstrap.min.css'
 });
-if (app.env === 'development') {
+if (app.env === 'development' || app.env === 'test') {
   app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', {
     destDir: 'assets'
   });
 }
+// include bootstrap fonts in dist
+trees.push(
+  pickFiles('bower_components/bootstrap/dist/fonts', {
+    srcDir: '/',
+    destDir: '/fonts'
+  })
+);
 
 app.import('bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js');
 app.import('bower_components/bootstrap-datepicker/js/locales/bootstrap-datepicker.de.js');
 
-app.import('bower_components/ember-easyForm/index.js');
+app.import('bower_components/ember-i18n/lib/i18n.js');
+app.import('bower_components/ember-i18n/lib/i18n-plurals.js');
 
 app.import({
   development: 'bower_components/floatThead/dist/jquery.floatThead.js',
@@ -65,24 +70,24 @@ app.import('bower_components/sjcl/sjcl.js');
 
 app.import('bower_components/modernizr/modernizr.js');
 
-var pickFiles = require('broccoli-static-compiler');
 // include webshim files into dist
-var webshim = pickFiles('bower_components/webshim/js-webshim/minified/shims', {
-  srcDir: '/',
-  destDir: '/assets/shims'
-});
+trees.push(
+  pickFiles('bower_components/webshim/js-webshim/minified/shims', {
+    srcDir: '/',
+    destDir: '/assets/shims'
+  })
+);
 
 // include dummy data into dist if environment is development or test
 if (app.env === 'development' || app.env === 'test') {
-  var dummyData = pickFiles('server/dummy', {
-    srcDir: '/',
-    destDir: '/data'
-  });
+  trees.push(
+    pickFiles('server/dummy', {
+      srcDir: '/',
+      destDir: '/data'
+    })
+  );
 }
 
+trees.push(app.toTree());
 var mergeTrees = require('broccoli-merge-trees');
-module.exports = mergeTrees([
-  app.toTree(),
-  webshim,
-  dummyData
-]);
+module.exports = mergeTrees(trees);
