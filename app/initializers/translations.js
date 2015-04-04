@@ -1,5 +1,4 @@
 import Ember from "ember";
-import translations from "croodle/lang/translations";
 /* global moment */
 /* global webshim */
 
@@ -23,10 +22,11 @@ export default {
         }
         
         // check if language is supported
+        var translations = {'en': {}};
         if(typeof translations[language] !== "object") {
             language = "en";
-        }
-      
+        }     
+ 
 	// set language
 	Ember.set(application, 'locale', language);
         
