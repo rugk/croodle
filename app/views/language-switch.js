@@ -3,12 +3,19 @@ import Ember from "ember";
 export default Ember.View.extend({
   templateName: 'language-switch',
   
-  languages: function() {
-    var languages = [];
-    var translations = {'en': {}};
-    for(var lang in translations) {
-      languages.push(lang);
+  availableLocales: function() {
+    var application = this.get('container').lookup('application:main');
+
+    return application.get('availableLocales');
+  }.property(),
+
+  locale: function(key, value) {
+    var application = this.get('container').lookup('application:main');
+    
+    if(arguments.length > 1) {
+      application.set('locale', value);
     }
-    return languages;
+    
+    return application.get('locale');
   }.property()
 });

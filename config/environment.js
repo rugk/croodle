@@ -12,7 +12,8 @@ module.exports = function(environment) {
     },
 
     APP: {
-      defaultLocal: 'en'
+      defaultLocal: 'en',
+      htmlLocales: true
     },
     
     contentSecurityPolicy: {
