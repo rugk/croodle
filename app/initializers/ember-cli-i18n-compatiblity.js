@@ -1,7 +1,6 @@
 import Ember from 'ember';
-import ValidationMessages from 'ember-validations/messages';
 
-export function initialize(container, application) {
+export function initialize(container) {
   var t = container.lookup('utils:t');
   Ember.I18n = {};
   Ember.I18n.t = t;
@@ -49,10 +48,6 @@ export function initialize(container, application) {
       });
     }.on('willDestroyElement','willClearRender')
   });
-
-  ValidationMessages.render = function(attribute, context) {
-    return t('errors.' + attribute, context);
-  };
 }
 
 export default {
