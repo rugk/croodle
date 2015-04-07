@@ -12,7 +12,7 @@ module.exports = function(environment) {
     },
 
     APP: {
-      defaultLocal: 'en',
+      defaultLocale: 'en',
       htmlLocales: true
     },
     
