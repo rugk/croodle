@@ -1,12 +1,11 @@
 import Ember from "ember";
+import getLocales from "ember-cli-i18n-locales/utils/get-locales";
 
 export default Ember.View.extend({
   templateName: 'language-switch',
   
   availableLocales: function() {
-    var application = this.get('container').lookup('application:main');
-
-    return application.get('availableLocales');
+    return getLocales();
   }.property(),
 
   locale: function(key, value) {
