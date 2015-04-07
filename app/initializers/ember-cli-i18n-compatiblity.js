@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ValidationMessages from 'ember-validations/messages';
 
 export function initialize(container) {
   var t = container.lookup('utils:t');
@@ -48,6 +49,23 @@ export function initialize(container) {
       });
     }.on('willDestroyElement','willClearRender')
   });
+
+  ValidationMessages.render = function(attribute, context) {
+    return this.replaceRegex(t('errors.' + attribute, context), context);
+  };
+
+  ValidationMessages.replaceRegex = function(text, context) {
+    var regex = new RegExp("{{(.*?)}}"),
+      attributeName = "";
+
+    var result = text.toString();
+    while (regex.test(result)) {
+      attributeName = regex.exec(result)[1];
+      result = result.replace(regex, context[attributeName]);
+    }
+
+    return result;
+  };
 }
 
 export default {
