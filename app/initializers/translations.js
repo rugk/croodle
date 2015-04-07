@@ -41,8 +41,15 @@ export default {
         // update locale of libaries used if application locale changes
         Ember.addObserver(application, 'locale', function() {
           var locale = application.get('locale');
+
+          // update locale of libaries used if application locale changes
           moment.locale(locale);
           webshim.activeLang(locale);
+
+          // store or update selected locale in cookie
+          document.cookie="locale=" + locale + ";" +
+                          // give cookie a lifetime of one year
+                          "max-age=" + 60*60*24*356 + ";";
         });
     }
 };
