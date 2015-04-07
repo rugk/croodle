@@ -148,7 +148,19 @@ export default Ember.View.extend(Ember.I18n.TranslateableProperties, {
   creationDateFormatted: function() {
     return moment( this.get('controller.creationDate') ).format('LLLL');
   }.property('controller.creationDate'),
-  
+ 
+  /*
+   * update formatted creation date if locale changes
+   */
+  creationDateFormattedObserver: function() {
+    var application = this.get('container').lookup('application:main'),
+        self = this;
+
+    Ember.addObserver(application, 'locale', function() {
+      self.notifyPropertyChange('creationDateFormatted');
+    });
+  }.on('init'),
+ 
   showEvaluationLabel: function() {
     if (this.get('showEvaluation')) {
       return this.get('showEvaluationLabelHide');

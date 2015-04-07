@@ -106,7 +106,7 @@ export default {
     url: "is not a valid URL"
   },
   index: {
-    title: "deutsch Croodle simplifies making appointments and finding decisions ...<br/>... and at the same time protects your data",
+    title: "Croodle simplifies making appointments and finding decisions ...<br/>... and at the same time protects your data",
     features: {
       title: "Functions",
       list: {
@@ -133,7 +133,7 @@ export default {
     }
   },
   poll: {
-    createdTime: "Created on {{creationDate}}.",
+    createdTime: "Created on %@.",
     error: {
       newUser: {
         everyOptionIsAnswered: "Please answer ever option."

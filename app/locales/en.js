@@ -133,7 +133,7 @@ export default {
     }
   },
   poll: {
-    createdTime: "Created on {{creationDate}}.",
+    createdTime: "Created on %@.",
     error: {
       newUser: {
         everyOptionIsAnswered: "Please answer ever option."
