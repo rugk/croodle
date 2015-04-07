@@ -150,13 +150,13 @@ export default Ember.ObjectController.extend(EmberValidations.Mixin, {
   validations: {
     enoughTimes: {
       acceptance: {
-        message: Ember.I18n.t('create.options-datetime.error.notEnoughTimes')
+        message: Ember.I18n.t('create.optionsDatetime.error.notEnoughTimes')
       }
     },
     
     correctTimeFormat: {
       acceptance: {
-        message: Ember.I18n.t('create.options-datetime.error.correctTimeFormat')
+        message: Ember.I18n.t('create.optionsDatetime.error.correctTimeFormat')
       }
     }
   }
