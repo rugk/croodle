@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import ValidationMessages from 'ember-validations/messages';
 
-export function initialize(container) {
+export function initialize(container, application) {
   var t = container.lookup('utils:t');
   Ember.I18n = {};
   Ember.I18n.t = t;
@@ -36,6 +36,12 @@ export function initialize(container) {
     _addTranslationObservers: function() {
       eachTranslatedAttribute(this, function(attribute, translation) {
         this.addObserver(attribute + 'Translation', this, this._translationObserver);
+        
+        var self = this;
+        Ember.addObserver(application, 'locale', function() {
+          self.notifyPropertyChange(attribute + 'Translation');
+        });
+        
         Ember.set(this, attribute, translation);
       });
     }.on('init'),
