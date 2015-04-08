@@ -1,179 +1,179 @@
 export default {
   answerTypes: {
     yes: {
-      label: "Yes"
+      label: "Ja"
     },
     no: {
-      label: "No"
+      label: "Nein"
     },
     maybe: {
-      label: "Maybe"
+      label: "Vielleicht"
     },
     freeText: {
-      label: "Allow free text"
+      label: "Freitext erlauben"
     },
     yesNo: {
-      label: "Yes, No"
+      label: "Ja, Nein"
     },
     yesNoMaybe: {
-      label: "Yes, No, Maybe"
+      label: "Ja, Nein, Vielleicht"
     }
   },
   create: {
     index: {
       input: {
         pollType: {
-          label: "What is the purpose of your poll?"
+          label: "Was ist der Zweck deiner Umfrage?"
         }
       }
     },
     meta: {
       input: {
         title: {
-          label: "Title",
-          placeholder: "Add a poll title."
+          label: "Titel",
+          placeholder: "Füge einen Umfragetitel hinzu."
         },
         description: {
-          label: "Description",
-          placeholder: "Optional: Add a description to the poll."
+          label: "Beschreibung",
+          placeholder: "Optional: Füge der Umfrage eine Beschreibung hinzu."
         }
       }
     },
-    next: "Next",
+    next: "Weiter",
     options: {
       options: {
-        label: "Answer options"
+        label: "Antwort-Optionen"
       },
       error: {
-        notEnoughDates: "You have to choose either two days or one day plus the option 'set times'.",
-        notEnoughOptions: "Enter at least two answer options."
+        notEnoughDates: "Es müssen entweder zwei Tage ausgewählt, oder ein Tag und die Option 'Uhrzeiten festlegen' gewählt werden.",
+        notEnoughOptions: "Es müssen mindestens zwei Antwort-Optionen eingetragen werden."
       },
       defineTimes: {
-        label: "Set times?"
+        label: "Uhrzeiten festlegen?"
       },
       input: {
         moreOptions: {
-          label: "Add further answer options"
+          label: "weitere Antwort-Optionen hinzufügen"
         }
       }
     },
     optionsDatetime: {
       datetimes: {
-        label: "Times"
+        label: "Uhrzeiten"
       },
-      moreInputs: "Add further times",
-      copyFirstLine: "Adopt times of the first line for all others",
+      moreInputs: "Weitere Uhrzeiten eingeben",
+      copyFirstLine: "Uhrzeiten der ersten Zeile für alle anderen übernehmen",
       error: {
-        notEnoughTimes: "At least one valid time has to be set per day. If only one day was chosen, at least two times have to be set.",
-        correctTimeFormat: "Check your entry: At least one time does not comply with the correct format. Hours and minutes of the time have to be separated by a colon (e.g. 13:00)."
+        notEnoughTimes: "Es muss mindestens eine gültige Uhrzeit pro Tag festgelegt werden. Falls nur ein einziger Tag ausgewählt wurde, müssen mindestens 2 Uhrzeiten festgelegt werden.",
+        correctTimeFormat: "Überprüfe deine Eingabe: Mindestens eine Uhrzeit hat nicht das korrekte Format. Stunden und Minuten der Uhrzeit müssen durch einen Doppelpunkt getrennt sein (z.B. 13:00)."
       }
     },
     settings: {
       answerType: {
-        label: "Which answers should be available?"
+        label: "Welche Antworten sollen verfügbar sein?"
       },
       anonymousUser: {
-        label: "Allow anonymous participation in the poll?"
+        label: "Anonyme Teilnahme an der Umfrage erlauben?"
       },
       forceAnswer: {
-        label: "Force answer for every option?"
+        label: "Eine Antwort für jede Option erzwingen?"
       }
     },
-    save: "Save"
+    save: "Speichern"
   },
   errors: {
-    inclusion: "is not part of the list",
-    exclusion: "reserved",
-    invalid: "invalid",
-    confirmation: "does not accord with {{attribute}}",
-    accepted: "has to be accepted",
-    empty: "cannot be left blank",
-    blank: "Must be filled in.",
-    present: "Has to be left blank.",
-    tooLong: "is too long (Maximum are {{count}} characters)",
-    tooShort: "Please insert at least {{count}} characters.",
-    wrongLength: "has invalid length (Minimum length {{count}} characters)",
-    notANumber: "is not a number",
-    notAnInteger: "Has to be a whole number.",
-    greaterThan: "has to be bigger than {{count}}",
-    greaterThanOrEqualTo: "must be bigger or same as {{count}}",
-    equalTo: "must equal {{count}}",
-    lessThan: "must be smaller than {{count}}",
-    lessThanOrEqualTo: "must be smaller or equal to {{count}}",
-    otherThan: "must be a different number than {{count}}",
-    odd: "must be unequal to",
-    even: "must be equal to",
-    url: "is not a valid URL"
+    inclusion: "ist kein Bestandteil der Liste",
+    exclusion: "reserviert",
+    invalid: "ungültig",
+    confirmation: "stimmt nicht mit {{attribute}} überein",
+    accepted: "muss akzeptiert werden",
+    empty: "darf nicht freigelassen werden.",
+    blank: "Muss ausgefüllt werden.",
+    present: "Muss frei bleiben.",
+    tooLong: "ist zu lang (Maximum sind {{count}} Zeichen)",
+    tooShort: "Bitte gebe mindestens {{count}} Zeichen ein.",
+    wrongLength: "hat die falsche Länge (Mindestlänge {{count}} Zeichen)",
+    notANumber: "ist keine Zahl",
+    notAnInteger: "Muss eine ganze Zahl sein.",
+    greaterThan: "muss größer als {{count}} sein",
+    greaterThanOrEqualTo: "muss größer oder gleich {{count}} sein",
+    equalTo: "muss gleich {{count}} sein",
+    lessThan: "muss kleiner als {{count}} sein",
+    lessThanOrEqualTo: "muss kleiner oder gleich {{count}} sein",
+    otherThan: "muss einen anderen Wert als {{count}} haben",
+    odd: "muss ungleich sein",
+    even: "muss gleich sein",
+    url: "ist keine gültige URL"
   },
   index: {
-    title: "Croodle simplifies making appointments and finding decisions ...<br/>... and at the same time protects your data",
+    title: "Croodle vereinfacht die Termin- und Entscheidungsfindung ...<br/>... und schützt dabei deine Daten",
     features: {
-      title: "Functions",
+      title: "Funktionen",
       list: {
-        overview: "<strong>Find a date</strong> or <strong>do a poll</strong> with as many people as you like.",
-        privacy: "Your data stays private: Already in your browser they are being <strong>encrypted</strong>. Only the people who you send the link of the poll to will know what your poll is about.",
-        options: "You can set as many  <strong>answer options</strong> as you like. You can choose your <strong>preferred date</strong> or compile <strong>any questions</strong>",
-        answers: "you can use <strong>pre-defined answer options</strong> like <i>yes</i>, <i>no</i>, <i>maybe</i> or allow <strong>own questions</strong>.",
-        evaluation: "You keep the overview through <strong>overview of preferred answers</strong>."
+        overview: "<strong>Finde einen Termin</strong> oder <strong>mache eine Umfrage</strong> mit so vielen Leuten, wie du möchtest.",
+        privacy: "Deine Daten bleiben privat: Sie werden bereits in deinem Browser <strong>verschlüsselt</strong>. Worum es in deiner Umfrage geht, wissen nur die Personen, denen du den Umfrage-Link sendest.",
+        options: "Du kannst so viele <strong>Antwortmöglichkeiten</strong> festlegen, wie du möchtest. Du kannst deinen Wunschtermin im <strong>Kalender</strong> auswählen, oder <strong>beliebige Fragen</strong> erstellen.",
+        answers: "Du kannst <strong>vordefinierte Anwortmöglichkeiten</strong> nutzen, wie zum Beispiel <i>ja</i>, <i>nein</i>, <i>vielleicht</i> oder <strong>selbsterstellte Antworten</strong> erlauben.",
+        evaluation: "Du behälst den Überblick durch eine automatisch aktualisierte <strong>Übersicht der bevorzugten Antworten</strong>.",
       }
     },
     link: {
-      haveATry: "test it now"
+      haveATry: "probiere es jetzt aus"
     },
     hoster: {
-      title: "Host your own Croodle:",
-      text: "You don’t have to trust this Croodle. Croodle is a free software and you can install it on your own server. You only a few megabytes memory capacity, PHP and SSL-encryption. You can find the software and tips for installation here <a href=\"https://github.com/jelhan/croodle\">GitHub</a>."
+      title: "Hoste dein eigenes Croodle:",
+      text: "Du musst diesem Croodle nicht vertrauen. Croodle ist freie Software und kannst sie auf deinem eigenen Server installieren. Hierzu werden lediglich einige Megabyte Speicherplatz, PHP und SSL-Verschlüsselung benötigt. Die Software und Tipps zur Installation findest du auf <a href=\"https://github.com/jelhan/croodle\">GitHub</a>.",
     }
   },
   modal: {
     saveRetry: {
-      title: "Save failed",
+      title: "Speichern fehlgeschlagen.",
       text: "<p>Deine Teilnahme konnte nicht gespeichert werden. Bitte prüfe deine Internetverbindung und versuche es anschließend erneut.</p><p>Sollte dies nicht helfen, kann ein kurzfristiges Ausfall des Servers schuld sein. Warte bitte einige Minuten bevor du es erneut versuchst. Du kannst die Seite so lange geöffnet lassen.</p><p>Sollten die Probleme anhalten, wende dich bitte an die Administratoren der Seite.</p>",
-      buttonRetry: "Retry"
+      buttonRetry: "erneut versuchen"
     }
   },
   poll: {
-    createdTime: "Created on %@.",
+    createdTime: "Erstellt am %@.",
     error: {
       newUser: {
-        everyOptionIsAnswered: "Please answer ever option."
+        everyOptionIsAnswered: "Bitte beantworte jede Option."
       },
-      newUserName: "You have to give a user name."
+      newUserName: "Du musst einen Nutzernamen angeben."
     },
     evaluation: {
-      label: "Evaluation"
+      label: "Auswertung"
     },
     input: {
       newUserName: {
-        placeholder: "Your name"
+        placeholder: "Dein Name"
       },
       showEvaluation: {
-        hide: "Hide",
-        show: "Show"
+        hide: "Verbergen",
+        show: "Anzeigen"
       }
     },
     modal: {
       timezoneDiffers: {
-        title: "Which time zone should be used to display the data?",
-        body: "The poll has been set up for a time zone that differs from your local time. Which time zone should be used to display the data?",
+        title: "In welcher Zeitzone sollen die Daten angezeigt werden?",
+        body: "Die Umfrage wurde für eine Zeitzone angelegt, die von deiner lokalen Zeit abweicht. In welcher Zeitzone sollen die Daten angezeigt werden?",
         button: {
-          useLocalTimezone: "my time zones",
-          usePollTimezone: "Original time zone"
+          useLocalTimezone: "meine Zeitzone",
+          usePollTimezone: "Original-Zeitzone"
         }
       }
     },
-    save: "Save",
+    save: "Speichern",
     share: {
-      body: "Share the link and invite others to the poll.",
-      notice: "Anyone who knows the link can see your poll. If this contains private data, you should only pass on this link via encrypted e-mail or chat with end-to-end-encryption."
+      body: "Teile den Link und lade Andere zu deiner Umfrage ein.",
+      notice: "Jeder der den Link kennt, kann deine Umfrage ansehen. Falls diese private Daten enthält, solltest du den Link nur per verschlüsselter Mail, oder Chat mit End-to-End-Verschlüsselung weitergeben."
     }
   },
   pollTypes: {
     findADate: {
-      label: "I would like to make a date. (e.g. date or time for appointment)"
+      label: "Ich möchte einen Termin finden. (z.B. Datum oder Uhrzeit für eine Verabredung)"
     },
     makeAPoll: {
-      label: "I would like to answer a question. (e.g. what goes best with coffee?)"
+      label: "Ich möchte eine Frage beantworten. (z.B. Wozu schmeckt Kaffe am Besten?)"
     }
   }
 };
