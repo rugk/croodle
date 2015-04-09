@@ -72,25 +72,6 @@ export function initialize(container, application) {
 
     return result;
   };
-
-  Ember.EasyForm.processOptions = function(property, options) {
-    if (options) {
-      var bindView = options.data.view;
-      Ember.addObserver(application, 'locale', bindView, bindView.rerender);
-      
-      var eachTranslatedAttribute = Ember.I18n.eachTranslatedAttribute || Ember.EasyForm.eachTranslatedAttribute;
-      eachTranslatedAttribute(options.hash, function (attribute, translation) {
-        options.hash[attribute] = translation;
-        delete options.hash[attribute + 'Translation'];
-      });
-      
-      options.hash.property = property;
-    } else {
-      options = property;
-    }
-
-    return options;
-  };
 }
 
 export default {
